@@ -47,72 +47,16 @@
 
 		}
 	</style>
+	
 </head>
 
 <body>
 	<div class="normalView">
-		<mdui-navigation-rail contained value="">
-			<mdui-navigation-rail-item icon="notifications--outlined" href="index.html" value="noti">
-				通知
-				<mdui-badge slot="badge">1</mdui-badge>
-			</mdui-navigation-rail-item>
-			<mdui-navigation-rail-item icon="people--outlined" href="student.html"
-				value="student">学生</mdui-navigation-rail-item>
-			<mdui-navigation-rail-item icon="apps--outlined" href="tool.html"
-				value="tool">小工具</mdui-navigation-rail-item>
-			<s-bottom-sheet slot="bottom">
-				<mdui-fab icon="fact_check" slot="trigger"></mdui-fab>
-				<div style="padding: 2em;text-align: center;">
-					<mdui-icon name="contactless--outlined"
-						style="font-size: 10em;opacity: 0.3;color:rgb(var(--mdui-color-primary))"></mdui-icon>
-					<h2>请将校园卡放在感应区以识别</h2>
-					<mdui-button icon="question_mark--outlined">无法识别</mdui-button>
-				</div>
-			</s-bottom-sheet>
-		</mdui-navigation-rail>
 		<mdui-top-app-bar
 		style="position: sticky;background-color: rgb(var(--mdui-color-surface-container));margin-right: 1em;">
 		<mdui-top-app-bar-title style="margin-left: 1em;">班级智能信息管理系统</mdui-top-app-bar-title>
-
-		<mdui-dialog close-on-overlay-click class="example-header">
-			<mdui-top-app-bar slot="header" style="padding: 1.5em">
-				<mdui-top-app-bar-title>呼叫学生</mdui-top-app-bar-title>
-				<s-snackbar>
-					<mdui-button icon="call" slot="trigger" class="makeCall">呼叫</mdui-button>
-					已呼叫指定学生
-				</s-snackbar>
-			</mdui-top-app-bar>
-			<div>
-				选中需要通知的学生并点击右上角的 <b>呼叫按钮</b> 以立即呼叫学生。
-				<mdui-list>
-					<mdui-divider></mdui-divider>
-					<mdui-list-item nonclickable rounded>
-						2318
-						<mdui-avatar slot="icon" icon="android--rounded"></mdui-avatar>
-						<mdui-checkbox slot="end-icon"></mdui-checkbox>
-					</mdui-list-item>
-					<mdui-list-item nonclickable rounded>
-						FlyGues (07)
-						<mdui-avatar slot="icon" icon="person_1--rounded"></mdui-avatar>
-						<mdui-checkbox slot="end-icon"></mdui-checkbox>
-					</mdui-list-item>
-				</mdui-list>
-			</div>
-		</mdui-dialog>
-
-		<mdui-button-icon icon="call--outlined"></mdui-button-icon>
-
-		<script>
-			const dialog = document.querySelector(".example-header");
-
-			const openButton = dialog.nextElementSibling;
-			const closeButton = dialog.querySelector("mdui-button");
-
-			openButton.addEventListener("click", () => dialog.open = true);
-			// closeButton.addEventListener("click", () => dialog.open = false);
-		</script>
-
-		<mdui-button-icon icon="settings_outline--outlined" href="settings.html" style="margin-right: 1em;"></mdui-button-icon>
+		<mdui-button-icon icon="settings_outline--outlined" href="settings.html"
+			style="margin-right: 1em;"></mdui-button-icon>
 
 		<mdui-dropdown>
 			<style>
@@ -132,19 +76,35 @@
 
 	</mdui-top-app-bar>
 
+		<mdui-navigation-rail contained value="">
+			<mdui-navigation-rail-item icon="notifications--outlined" href="index.html" value="noti">
+				通知
+				<mdui-badge slot="badge">1</mdui-badge>
+			</mdui-navigation-rail-item>
+			<mdui-navigation-rail-item icon="people--outlined" href="student.html"
+				value="student">学生</mdui-navigation-rail-item>
+			<mdui-navigation-rail-item icon="apps--outlined" href="tool.html"
+				value="tool">小工具</mdui-navigation-rail-item>
+			<s-bottom-sheet slot="bottom">
+				<mdui-fab icon="fact_check" slot="trigger"></mdui-fab>
+				<div style="padding: 2em;text-align: center;">
+					<mdui-icon name="sensors--outlined"
+						style="font-size: 10em;opacity: 0.3"></mdui-icon>
+					<h2>请将校园卡放在感应区以识别</h2>
+					<mdui-button icon="question_mark--outlined">无法识别</mdui-button>
+				</div>
+			</s-bottom-sheet>
+		</mdui-navigation-rail>
 
 		<div class="main" style="height: 80vh;padding: 1em;padding-left: 2em;padding-right: 2em;">
 			<h1>设置</h1>
 			<mdui-tabs value="tab-1">
-				<div style="display: flex;align-items: center;margin-bottom: 1em;">
-					<s-search style="width: 100%;margin-right: 1em;">
+				<div style="display: flex;align-items: center;">
+					<s-search style="width: 100%;margin-right: 1em;" size="small">
 						<s-icon-button slot="start">
 							<s-icon type="search"></s-icon>
 						</s-icon-button>
 						<input type="text" placeholder="搜索设置项">
-						<s-icon-button slot="end" style="margin-right: 1em;">
-							<mdui-button-icon icon="filter_list"></mdui-button-icon>
-						</s-icon-button>
 						<s-icon-button slot="end">
 							<s-icon type="close"></s-icon>
 						</s-icon-button>
@@ -155,11 +115,6 @@
 				</mdui-tab>
 				<mdui-tab value="tab-2">关于</mdui-tab>
 
-				<style>
-					mdui-menu-item{
-						padding: 2em;
-					}
-				</style>
 
 				<mdui-tab-panel slot="panel" value="tab-1">
 					<mdui-list>
@@ -167,7 +122,7 @@
 						<mdui-list-item>
 							自动登录
 							<span slot="description"><small>保存用户凭据并登录</small></span>
-							<mdui-icon slot="icon" name="logout--outlined"></mdui-icon>
+							<mdui-icon slot="icon" name="login--outlined"></mdui-icon>
 							<mdui-switch slot="end-icon" checked>
 								<mdui-icon slot="checked-icon" name=""></mdui-icon>
 							</mdui-switch>
@@ -179,7 +134,19 @@
 							<mdui-select variant="outlined" value="item-1" slot="end-icon" disabled>
 								<mdui-menu-item value="item-1">蓝色</mdui-menu-item>
 								<mdui-menu-item value="item-2">自动颜色</mdui-menu-item>
-							  </mdui-select>
+								<mdui-button-icon slot="end-icon" icon="keyboard_arrow_down"></mdui-button-icon>
+
+							</mdui-select>
+						</mdui-list-item>
+						<mdui-list-item>
+							黑暗模式设置
+							<mdui-icon slot="icon" name="brightness_medium--outlined"></mdui-icon>
+							<mdui-select variant="outlined" value="item-1" slot="end-icon" disabled>
+								<mdui-menu-item value="item-1">自动（默认）</mdui-menu-item>
+								<mdui-menu-item value="item-2">浅色</mdui-menu-item>
+								<mdui-menu-item value="item-2">深色</mdui-menu-item>
+								<mdui-button-icon slot="end-icon" icon="keyboard_arrow_down"></mdui-button-icon>
+							</mdui-select>
 						</mdui-list-item>
 
 					</mdui-list>
@@ -189,12 +156,17 @@
 						<mdui-list-subheader>关于此软件</mdui-list-subheader>
 						<mdui-list-item>
 							班级智能信息管理系统
-							<span slot="description">版本0.0.1</span>
+							<span slot="description"><small>版本0.0.1</small></span>
 							<mdui-icon slot="icon" name="info--outlined"></mdui-icon>
 						</mdui-list-item>
-						<mdui-list-item>
+						<mdui-list-subheader>友情链接</mdui-list-subheader>
+						<mdui-list-item href="https://github.com/FlyGues2889/automaticClass">
 							访问GitHub仓库
 							<mdui-icon slot="icon" name="open_in_new--outlined"></mdui-icon>
+						</mdui-list-item>
+						<mdui-list-item href="https://space.bilibili.com/477350426?spm_id_from=333.337.0.0">
+							访问作者 BiliBili 主页
+							<mdui-icon slot="icon" name=""></mdui-icon>
 						</mdui-list-item>
 					</mdui-list>
 				</mdui-tab-panel>
