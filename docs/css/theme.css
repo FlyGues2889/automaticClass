@@ -25,6 +25,7 @@ mdui-navigation-rail {
     margin-left: 0.5em;
     margin-bottom: 1em !important;
     margin-top: 1em !important;
+    /* z-index: 0; */
 }
 
 mdui-navigation-bar {
@@ -37,4 +38,9 @@ b {
 
 mdui-top-app-bar-title {
     font-family: 'Harmony Sans SC Bold';
+}
+
+mdui-divider{
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
