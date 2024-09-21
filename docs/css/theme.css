@@ -1,0 +1,40 @@
+body {
+    font-family: 'Harmony Sans SC M' !important;
+}
+
+div.normalView {
+    height: 92vh;
+    display: block;
+}
+
+div.main {
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none;
+    box-sizing: border-box;
+    margin: 1em;
+    border-radius: 1em;
+    background-color: rgb(var(--mdui-color-surface));
+    padding: 1em;
+    padding-top: 0;
+}
+
+mdui-navigation-rail {
+    background-color: rgb(var(--mdui-color-surface-container));
+    position: fixed;
+    margin-left: 0.5em;
+    margin-bottom: 1em !important;
+    margin-top: 1em !important;
+}
+
+mdui-navigation-bar {
+    background-color: rgb(var(--mdui-color-surface-container));
+}
+
+b {
+    font-family: 'Harmony Sans SC Black';
+}
+
+mdui-top-app-bar-title {
+    font-family: 'Harmony Sans SC Bold';
+}
