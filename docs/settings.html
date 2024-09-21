@@ -55,7 +55,7 @@
 			style="position: sticky;background-color: rgb(var(--mdui-color-surface-container));margin-right: 1em;">
 			<mdui-top-app-bar-title style="margin-left: 1em;">班级智能信息管理系统</mdui-top-app-bar-title>
 
-			<mdui-button-icon icon="settings_outline--outlined" href="settings.html"></mdui-button-icon>
+			<mdui-button-icon icon="settings_outline--outlined" href="settings.html" style="margin-right: 1em;"></mdui-button-icon>
 			<mdui-dropdown>
 				<style>
 					mdui-menu {
@@ -74,7 +74,7 @@
 
 		</mdui-top-app-bar>
 		<mdui-navigation-rail contained value="">
-			<mdui-navigation-rail-item icon="notifications--outlined" href="noti.html" value="noti">
+			<mdui-navigation-rail-item icon="notifications--outlined" href="index.html" value="noti">
 				通知
 				<mdui-badge slot="badge">1</mdui-badge>
 			</mdui-navigation-rail-item>
@@ -101,7 +101,7 @@
 						<s-icon-button slot="start">
 							<s-icon type="search"></s-icon>
 						</s-icon-button>
-						<input type="text" placeholder="搜索关键字">
+						<input type="text" placeholder="搜索设置项">
 						<s-icon-button slot="end" style="margin-right: 1em;">
 							<mdui-button-icon icon="filter_list"></mdui-button-icon>
 						</s-icon-button>
@@ -127,6 +127,7 @@
 						<mdui-list-item>
 							自动登录
 							<span slot="description">保存用户凭据并登录</span>
+							<mdui-icon slot="icon" name="logout--outlined"></mdui-icon>
 							<mdui-switch slot="end-icon" checked>
 								<mdui-icon slot="checked-icon" name=""></mdui-icon>
 							</mdui-switch>
@@ -134,6 +135,7 @@
 						<mdui-list-subheader>个性化</mdui-list-subheader>
 						<mdui-list-item>
 							动态配色方案
+							<mdui-icon slot="icon" name="color_lens--outlined"></mdui-icon>
 							<mdui-select variant="outlined" value="item-1" slot="end-icon" disabled>
 								<mdui-menu-item value="item-1">蓝色</mdui-menu-item>
 								<mdui-menu-item value="item-2">自动颜色</mdui-menu-item>
@@ -149,6 +151,10 @@
 							班级智能信息管理系统
 							<span slot="description">版本0.0.1</span>
 							<mdui-icon slot="icon" name="info--outlined"></mdui-icon>
+						</mdui-list-item>
+						<mdui-list-item>
+							访问GitHub仓库
+							<mdui-icon slot="icon" name="open_in_new--outlined"></mdui-icon>
 						</mdui-list-item>
 					</mdui-list>
 				</mdui-tab-panel>
