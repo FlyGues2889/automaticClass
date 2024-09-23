@@ -47,7 +47,6 @@
 
 		}
 	</style>
-	
 </head>
 
 <body>
@@ -57,7 +56,6 @@
 		<mdui-top-app-bar-title style="margin-left: 1em;">班级智能信息管理系统</mdui-top-app-bar-title>
 		<mdui-button-icon icon="settings_outline--outlined" href="settings.html"
 			style="margin-right: 1em;"></mdui-button-icon>
-
 		<mdui-dropdown>
 			<style>
 				mdui-menu {
@@ -76,14 +74,13 @@
 
 	</mdui-top-app-bar>
 
-		<mdui-navigation-rail contained value="">
+		<mdui-navigation-rail contained value="moment">
 			<mdui-navigation-rail-item icon="notifications--outlined" href="index.html" value="noti">
 				通知
 				<mdui-badge slot="badge">1</mdui-badge>
 			</mdui-navigation-rail-item>
-			<mdui-navigation-rail-item icon="people--outlined" href="student.html"
-				value="student">学生</mdui-navigation-rail-item>
-				<mdui-navigation-rail-item icon="camera--outlined" href="moment.html"
+			<mdui-navigation-rail-item icon="people--outlined" href="student.html" value="student">学生</mdui-navigation-rail-item>
+			<mdui-navigation-rail-item icon="camera" href="moment.html"
 				value="moment">圈子</mdui-navigation-rail-item>
 			<s-bottom-sheet slot="bottom">
 				<mdui-fab icon="fact_check" slot="trigger"></mdui-fab>
@@ -96,82 +93,49 @@
 			</s-bottom-sheet>
 		</mdui-navigation-rail>
 
+
 		<div class="main" style="height: 80vh;padding: 1em;padding-left: 2em;padding-right: 2em;">
-			<h1>设置</h1>
+			<h1>圈子</h1>
 			<mdui-tabs value="tab-1">
-				<div style="display: flex;align-items: center;">
-					<s-search style="width: 100%;margin-right: 1em;" size="small">
-						<s-icon-button slot="start">
-							<s-icon type="search"></s-icon>
-						</s-icon-button>
-						<input type="text" placeholder="搜索设置项">
-						<s-icon-button slot="end">
-							<s-icon type="close"></s-icon>
-						</s-icon-button>
-					</s-search>
+				<div style="display: flex;align-items: center;margin-bottom: 1em;">
 				</div>
 				<mdui-tab value="tab-1">
-					通用
+					班级圈子
 				</mdui-tab>
-				<mdui-tab value="tab-2">关于</mdui-tab>
-
+				<mdui-tab value="tab-2">我的</mdui-tab>
 
 				<mdui-tab-panel slot="panel" value="tab-1">
-					<mdui-list>
-						<mdui-list-subheader>账户</mdui-list-subheader>
-						<mdui-list-item>
-							自动登录
-							<span slot="description"><small>保存用户凭据并登录</small></span>
-							<mdui-icon slot="icon" name="login--outlined"></mdui-icon>
-							<mdui-switch slot="end-icon" checked>
-								<mdui-icon slot="checked-icon" name=""></mdui-icon>
-							</mdui-switch>
-						</mdui-list-item>
-						<mdui-list-subheader>个性化</mdui-list-subheader>
-						<mdui-list-item>
-							动态配色方案
-							<mdui-icon slot="icon" name="color_lens--outlined"></mdui-icon>
-							<mdui-select variant="outlined" value="item-1" slot="end-icon" disabled>
-								<mdui-menu-item value="item-1">蓝色</mdui-menu-item>
-								<mdui-menu-item value="item-2">自动颜色</mdui-menu-item>
-								<mdui-button-icon slot="end-icon" icon="keyboard_arrow_down"></mdui-button-icon>
+					<style>
+						mdui-card.list {
+							padding: 2rem;
+							width: 80%;
+							border-radius: 2rem;
+							margin-bottom: 1rem;
+						}
+					</style>
+					<div class="mdui-prose" style="margin: 1rem;width: auto;">
 
-							</mdui-select>
-						</mdui-list-item>
-						<mdui-list-item>
-							黑暗模式设置
-							<mdui-icon slot="icon" name="brightness_medium--outlined"></mdui-icon>
-							<mdui-select variant="outlined" value="item-1" slot="end-icon" disabled>
-								<mdui-menu-item value="item-1">自动（默认）</mdui-menu-item>
-								<mdui-menu-item value="item-2">浅色</mdui-menu-item>
-								<mdui-menu-item value="item-2">深色</mdui-menu-item>
-								<mdui-button-icon slot="end-icon" icon="keyboard_arrow_down"></mdui-button-icon>
-							</mdui-select>
-						</mdui-list-item>
+						<mdui-card class="list">
+							<h4>
+								<mdui-icon name="message"></mdui-icon><br>
+								<b>FlyGues</b>
+								<small>9/23 22:44</small>
+							</h4>
+							<p>终于搞好了TAT</p>
+							<mdui-divider></mdui-divider>
+							<mdui-button-icon icon="thumb_up--outlined" selectable selected-icon="thumb_up"></mdui-button-icon>
+							<mdui-button-icon icon="chat_bubble_outline"></mdui-button-icon>
+							<mdui-button-icon icon="share--outlined"></mdui-button-icon>
+						</mdui-card>
+					</div>
 
-					</mdui-list>
 				</mdui-tab-panel>
-				<mdui-tab-panel slot="panel" value="tab-2">
-					<mdui-list>
-						<mdui-list-subheader>关于此软件</mdui-list-subheader>
-						<mdui-list-item>
-							班级智能信息管理系统
-							<span slot="description"><small>版本0.0.1</small></span>
-							<mdui-icon slot="icon" name="info--outlined"></mdui-icon>
-						</mdui-list-item>
-						<mdui-list-subheader>友情链接</mdui-list-subheader>
-						<mdui-list-item href="https://github.com/FlyGues2889/automaticClass">
-							访问GitHub仓库
-							<mdui-icon slot="icon" name="open_in_new--outlined"></mdui-icon>
-						</mdui-list-item>
-						<mdui-list-item href="https://space.bilibili.com/477350426?spm_id_from=333.337.0.0">
-							访问作者 BiliBili 主页
-							<mdui-icon slot="icon" name=""></mdui-icon>
-						</mdui-list-item>
-					</mdui-list>
+				<mdui-tab-panel slot="panel" value="tab-2" style="margin-top: 1em;">
+					你还没有发布任何圈子。
 				</mdui-tab-panel>
 			</mdui-tabs>
 		</div>
+
 	</div>
 
 </body>
