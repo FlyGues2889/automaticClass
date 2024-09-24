@@ -52,41 +52,40 @@
 <body>
 	<div class="normalView">
 		<mdui-top-app-bar
-		style="position: sticky;background-color: rgb(var(--mdui-color-surface-container));margin-right: 1em;">
-		<mdui-top-app-bar-title style="margin-left: 1em;">班级智能信息管理系统</mdui-top-app-bar-title>
-		<mdui-button-icon icon="settings_outline--outlined" href="settings.html"
-			style="margin-right: 1em;"></mdui-button-icon>
-		<mdui-dropdown>
-			<style>
-				mdui-menu {
-					border-radius: 1em;
-					padding: 0.5em;
-				}
-			</style>
-			<mdui-button slot="trigger" icon="account_circle">2318</mdui-button>
-			<mdui-menu>
-				<mdui-menu-item icon="edit--outlined">编辑个人资料</mdui-menu-item>
-				<mdui-divider></mdui-divider>
-				<mdui-menu-item icon="logout--outlined" disabled>登出</mdui-menu-item>
+			style="position: sticky;background-color: rgb(var(--mdui-color-surface-container));margin-right: 1em;">
+			<mdui-top-app-bar-title style="margin-left: 1em;">班级智能信息管理系统</mdui-top-app-bar-title>
+			<mdui-button-icon icon="settings_outline--outlined" href="settings.html"
+				style="margin-right: 1em;"></mdui-button-icon>
+			<mdui-dropdown>
+				<style>
+					mdui-menu {
+						border-radius: 1em;
+						padding: 0.5em;
+					}
+				</style>
+				<mdui-button slot="trigger" icon="account_circle">2318</mdui-button>
+				<mdui-menu>
+					<mdui-menu-item icon="edit--outlined">编辑个人资料</mdui-menu-item>
+					<mdui-divider></mdui-divider>
+					<mdui-menu-item icon="logout--outlined" disabled>登出</mdui-menu-item>
 
-			</mdui-menu>
-		</mdui-dropdown>
+				</mdui-menu>
+			</mdui-dropdown>
 
-	</mdui-top-app-bar>
+		</mdui-top-app-bar>
 
 		<mdui-navigation-rail contained value="moment">
 			<mdui-navigation-rail-item icon="notifications--outlined" href="index.html" value="noti">
 				通知
 				<mdui-badge slot="badge">1</mdui-badge>
 			</mdui-navigation-rail-item>
-			<mdui-navigation-rail-item icon="people--outlined" href="student.html" value="student">学生</mdui-navigation-rail-item>
-			<mdui-navigation-rail-item icon="camera" href="moment.html"
-				value="moment">圈子</mdui-navigation-rail-item>
+			<mdui-navigation-rail-item icon="people--outlined" href="student.html"
+				value="student">学生</mdui-navigation-rail-item>
+			<mdui-navigation-rail-item icon="camera" href="moment.html" value="moment">圈子</mdui-navigation-rail-item>
 			<s-bottom-sheet slot="bottom">
 				<mdui-fab icon="fact_check" slot="trigger"></mdui-fab>
 				<div style="padding: 2em;text-align: center;">
-					<mdui-icon name="sensors--outlined"
-						style="font-size: 10em;opacity: 0.3"></mdui-icon>
+					<mdui-icon name="sensors--outlined" style="font-size: 10em;opacity: 0.3"></mdui-icon>
 					<h2>请将校园卡放在感应区以识别</h2>
 					<mdui-button icon="question_mark--outlined">无法识别</mdui-button>
 				</div>
@@ -97,7 +96,28 @@
 		<div class="main" style="height: 80vh;padding: 1em;padding-left: 2em;padding-right: 2em;">
 			<h1>圈子</h1>
 			<mdui-tabs value="tab-1">
-				<div style="display: flex;align-items: center;margin-bottom: 1em;">
+				<div style="display: flex;align-items: center;">
+					<mdui-dialog class="example-dialog" close-on-overlay-click>
+						<mdui-icon slot="icon" name="chat_bubble_outline"></mdui-icon>
+						<span slot="headline">发布新消息</span>
+						<span slot="description" style="width: 100%;color: rgb(var(mdui-color-error));background-color: rgb(var(--mdui-color-error),0.2);padding: 0.6em;border-radius: 1em;">
+							该功能正在试验，暂时无法发布内容。但你仍然可以填写。
+						</span>
+						<mdui-text-field variant="outlined" label="显示名称（不填默认为账户名）" style="margin-bottom: 1em;margin-top: 1em;" value="2318"></mdui-text-field>
+						<mdui-text-field variant="outlined" rows="3" label="正文"></mdui-text-field>
+						<mdui-button slot="action" icon="send">发布</mdui-button>
+					</mdui-dialog>
+
+					<mdui-button icon="add" variant="tonal">发布</mdui-button>
+
+					<script>
+						const dialog = document.querySelector(".example-dialog");
+						const openButton = dialog.nextElementSibling;
+						const closeButton = dialog.querySelector("mdui-button");
+
+						openButton.addEventListener("click", () => dialog.open = true);
+						closeButton.addEventListener("click", () => dialog.open = false);
+					</script>
 				</div>
 				<mdui-tab value="tab-1">
 					班级圈子
@@ -117,15 +137,73 @@
 
 						<mdui-card class="list">
 							<h4>
-								<mdui-icon name="message"></mdui-icon><br>
+								<!-- <mdui-icon name="message"></mdui-icon><br> -->
+								<b>2318</b>
+								<small>9/24 17:32</small>
+							</h4>
+							<p>我想放国庆了...</p>
+							<mdui-divider></mdui-divider>
+							<div style="display: flex;align-items: flex-start;">
+								<s-snackbar>
+									<mdui-button icon="thumb_up" slot="trigger" selectable selected-icon="thumb_up"
+										variant="outlined">2</mdui-button>
+									点赞已收到！
+								</s-snackbar>
+								<s-search style="width: 16em;margin-right: 1.2em;margin-left: 1.2em;" size="small">
+									<!-- <s-icon-button slot="start">
+										<mdui-button-icon icon="chat_bubble_outline"></mdui-button-icon>
+									</s-icon-button> -->
+									<input type="text" placeholder="输入评论......">
+									<s-icon-button slot="end">
+										<mdui-button-icon icon="send"></mdui-button-icon>
+									</s-icon-button>
+								</s-search>
+
+								<s-snackbar>
+									<mdui-button-icon icon="share--outlined" slot="trigger"></mdui-button-icon>
+									功能维护中
+								</s-snackbar>
+								<s-snackbar>
+									<mdui-button-icon icon="report--outlined" slot="trigger"
+										href="https://txc.qq.com/products/667423"></mdui-button-icon>
+									正在跳转...
+								</s-snackbar>
+							</div>
+						</mdui-card>
+						<mdui-card class="list">
+							<h4>
+								<!-- <mdui-icon name="message"></mdui-icon><br> -->
 								<b>FlyGues</b>
 								<small>9/23 22:44</small>
 							</h4>
 							<p>终于搞好了TAT</p>
 							<mdui-divider></mdui-divider>
-							<mdui-button-icon icon="thumb_up--outlined" selectable selected-icon="thumb_up"></mdui-button-icon>
-							<mdui-button-icon icon="chat_bubble_outline"></mdui-button-icon>
-							<mdui-button-icon icon="share--outlined"></mdui-button-icon>
+							<div style="display: flex;align-items: flex-start;">
+								<s-snackbar>
+									<mdui-button icon="thumb_up--outlined" slot="trigger" selectable
+										selected-icon="thumb_up" variant="outlined">1</mdui-button>
+									点赞已收到！
+								</s-snackbar>
+								<s-search style="width: 16em;margin-right: 1.2em;margin-left: 1.2em;" size="small">
+									<!-- <s-icon-button slot="start">
+										<mdui-button-icon icon="chat_bubble_outline"></mdui-button-icon>
+									</s-icon-button> -->
+									<input type="text" placeholder="输入评论......">
+									<s-icon-button slot="end">
+										<mdui-button-icon icon="send"></mdui-button-icon>
+									</s-icon-button>
+								</s-search>
+
+								<s-snackbar>
+									<mdui-button-icon icon="share--outlined" slot="trigger"></mdui-button-icon>
+									功能维护中
+								</s-snackbar>
+								<s-snackbar>
+									<mdui-button-icon icon="report--outlined" slot="trigger"
+										href="https://txc.qq.com/products/667423"></mdui-button-icon>
+									正在跳转...
+								</s-snackbar>
+							</div>
 						</mdui-card>
 					</div>
 
